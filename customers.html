@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customers - ERP System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 0;
+            background-color: #1a233a;
+            color: white;
+            width: 240px;
+        }
+        .sidebar-sticky {
+            height: 100vh;
+            padding-top: 1rem;
+        }
+        .nav-link {
+            color: rgba(255,255,255,.7);
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+        }
+        .nav-link:hover {
+            color: white;
+            background-color: rgba(255,255,255,.1);
+            border-left: 3px solid #3b7ddd;
+        }
+        .nav-link.active {
+            color: white;
+            background-color: rgba(255,255,255,.1);
+            border-left: 3px solid #3b7ddd;
+        }
+        .nav-link i {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        .navbar {
+            margin-left: 240px;
+            height: 60px;
+            background-color: white !important;
+            box-shadow: 0 0 2rem 0 rgba(33,37,41,.1);
+        }
+        .search-box {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            width: 300px;
+            font-size: 0.9rem;
+        }
+        .search-box:focus {
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 0 2px rgba(59,125,221,.25);
+        }
+        .top-icons {
+            color: #6c757d;
+        }
+        .top-icons i {
+            font-size: 1.2rem;
+            margin-left: 1.5rem;
+            cursor: pointer;
+        }
+        main {
+            margin-left: 240px;
+            padding: 2rem 1.5rem !important;
+        }
+        .welcome-section {
+            margin-bottom: 2rem;
+        }
+        .welcome-section h4 {
+            margin: 0;
+            color: #212529;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .welcome-section p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .nav-tabs {
+            border: none;
+            margin-bottom: 1.5rem;
+        }
+        .nav-tabs .nav-link {
+            color: #6c757d;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+        .nav-tabs .nav-link.active {
+            color: #3b7ddd;
+            font-weight: 500;
+            border-bottom: 2px solid #3b7ddd;
+            background: none;
+        }
+        .table-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 0.875rem 0 rgba(33,37,41,.05);
+        }
+        .table th {
+            color: #6c757d;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border-top: none;
+            padding: 1rem;
+        }
+        .table td {
+            vertical-align: middle;
+            padding: 1rem;
+            color: #212529;
+            font-size: 0.875rem;
+        }
+        .table tr:hover {
+            background-color: #f8f9fa;
+        }
+        .badge {
+            padding: 0.5em 0.75em;
+            font-weight: 400;
+        }
+        .action-buttons .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+        .action-buttons .btn i {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <input type="text" class="search-box" placeholder="Search in Customers (/)">
+            </div>
+            <div class="top-icons">
+                <i class="bi bi-clock-history"></i>
+                <i class="bi bi-bell"></i>
+                <i class="bi bi-gear"></i>
+                <i class="bi bi-person-circle"></i>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="sidebar">
+        <div class="sidebar-sticky">
+            <div class="px-3 mb-4">
+                <i class="bi bi-file-text" style="font-size: 1.5rem;"></i>
+                <span class="ms-2" style="font-size: 1.2rem;">Invoice</span>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">
+                        <i class="bi bi-house"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="customers.html">
+                        <i class="bi bi-people"></i> Customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-box"></i> Items
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-receipt"></i> Invoices
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-credit-card"></i> Payments Received
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-wallet2"></i> Expenses
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-clock"></i> Time Tracking
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-graph-up"></i> Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-gear"></i> Advanced Billing
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="welcome-section">
+            <h4>Customers</h4>
+            <p>Manage and view all your customers</p>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">All Customers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inactive</a>
+            </li>
+        </ul>
+
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Company</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Smith</td>
+                            <td>john@example.com</td>
+                            <td>ABC Company</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td class="action-buttons">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Michael Brown</td>
+                            <td>michael@example.com</td>
+                            <td>XYZ Company</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td class="action-buttons">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Wilson</td>
+                            <td>sarah@example.com</td>
+                            <td>DEF Company</td>
+                            <td><span class="badge bg-secondary">Inactive</span></td>
+                            <td class="action-buttons">
+                                <button class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

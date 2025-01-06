@@ -30,10 +30,18 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
+        .nav-item {
+            position: relative;
+        }
         .dropdown-menu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 0;
             background-color: #2c3e50;
             border: none;
-            margin-left: 20px;
+            border-radius: 0 5px 5px 0;
+            min-width: 180px;
         }
         .dropdown-item {
             color: white;
@@ -42,6 +50,10 @@
         .dropdown-item:hover {
             background-color: #1E2A3B;
             color: white;
+        }
+        .dropdown-toggle::after {
+            float: right;
+            margin-top: 8px;
         }
         .btn-submit {
             background-color: #1E2A3B;
@@ -65,27 +77,23 @@
                             <i class="fas fa-home me-2"></i> Dashboard
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" data-bs-toggle="collapse" data-bs-target="#usersSubmenu">
-                            <i class="fas fa-users me-2"></i> Users <i class="fas fa-chevron-down float-end"></i>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+                            <i class="fas fa-users me-2"></i> Users
                         </a>
-                        <div class="collapse show" id="usersSubmenu">
-                            <ul class="nav flex-column dropdown-menu show">
-                                <li><a class="dropdown-item active" href="add-user.html">Add User</a></li>
-                                <li><a class="dropdown-item" href="users.html">Users List</a></li>
-                            </ul>
-                        </div>
+                        <ul class="dropdown-menu show">
+                            <li><a class="dropdown-item active" href="add-user.html">Add User</a></li>
+                            <li><a class="dropdown-item" href="users.html">Users List</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#customersSubmenu">
-                            <i class="fas fa-user-tie me-2"></i> Customers <i class="fas fa-chevron-down float-end"></i>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-tie me-2"></i> Customers
                         </a>
-                        <div class="collapse" id="customersSubmenu">
-                            <ul class="nav flex-column dropdown-menu show">
-                                <li><a class="dropdown-item" href="add-customer.html">Add Customer</a></li>
-                                <li><a class="dropdown-item" href="customers.html">Customers List</a></li>
-                            </ul>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="add-customer.html">Add Customer</a></li>
+                            <li><a class="dropdown-item" href="customers.html">Customers List</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
